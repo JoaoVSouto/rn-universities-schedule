@@ -14,9 +14,11 @@ export const theme = extendTheme({
       800: 'rgba(0, 154, 52, 0.85)',
       300: '#09cb6e',
       200: 'rgba(0, 255, 117, 0.85)',
+      10: 'rgba(9, 203, 110, 0.055)',
     },
     cyan: {
       300: '#6cd9fc',
+      10: 'rgba(108, 217, 252, 0.1)',
     },
     blue: {
       700: '#003498',
@@ -27,6 +29,18 @@ export const theme = extendTheme({
   fonts: {
     body: 'Poppins, sans-serif',
     heading: 'Poppins, sans-serif',
+  },
+  components: {
+    Heading: {
+      variants: {
+        shift: {
+          color: 'gray.100',
+          fontSize: '3xl',
+          fontWeight: 'semibold',
+          letterSpacing: '0.5px',
+        },
+      },
+    },
   },
   styles: {
     global: {
