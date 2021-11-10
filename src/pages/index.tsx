@@ -7,6 +7,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Link,
   Stack,
   StackDivider,
   Text,
@@ -175,6 +176,27 @@ const Home: NextPage = () => {
             </VStack>
           </VStack>
         </Stack>
+
+        <Text align="center" mt="10" color="gray.700" fontWeight="semibold">
+          designed by{' '}
+          <Link
+            href="https://www.linkedin.com/in/mayra-perpetua/"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="green.300"
+          >
+            MP
+          </Link>{' '}
+          &amp; developed by{' '}
+          <Link
+            href="https://www.linkedin.com/in/joao-vitor-souto/"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="cyan.300"
+          >
+            JV
+          </Link>
+        </Text>
       </Container>
     </>
   );
