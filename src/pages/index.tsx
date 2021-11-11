@@ -217,7 +217,7 @@ const Home: NextPage = () => {
             rel="noopener noreferrer"
             color="green.300"
           >
-            MP
+            May
           </Link>{' '}
           &amp; developed by{' '}
           <Link
