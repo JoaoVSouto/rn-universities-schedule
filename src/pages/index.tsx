@@ -17,11 +17,15 @@ import {
 
 import type { Universities } from 'types/Universities';
 
+import { schedules } from 'data/schedules';
+
 import { Bubble } from 'components/Bubble';
 import { UniversityButton } from 'components/UniversityButton';
 
 const Home: NextPage = () => {
   const [university, setUniversity] = React.useState<Universities>('ifrn');
+
+  const chosenSchedule = schedules[university];
 
   function handleChangeUniversity(chosenUniversity: Universities) {
     return () => {
@@ -89,132 +93,22 @@ const Home: NextPage = () => {
               />
             }
           >
-            <VStack spacing={{ base: '4', md: '12' }}>
-              <Heading variant="shift">Matutino</Heading>
+            {chosenSchedule.map(schedule => (
+              <VStack key={schedule.shift} spacing={{ base: '4', md: '12' }}>
+                <Heading variant="shift">{schedule.shift}</Heading>
 
-              <VStack spacing={{ base: '4', md: '6' }}>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
+                <VStack spacing={{ base: '4', md: '6' }} align="start">
+                  {schedule.schedules.map(({ description, stamp }) => (
+                    <HStack key={stamp} spacing="4">
+                      <Text fontSize={{ base: 'lg', lg: '2xl' }}>{stamp}</Text>
+                      <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                        {description}
+                      </Text>
+                    </HStack>
+                  ))}
+                </VStack>
               </VStack>
-            </VStack>
-            <VStack spacing={{ base: '4', md: '12' }}>
-              <Heading variant="shift">Matutino</Heading>
-
-              <VStack spacing={{ base: '4', md: '6' }}>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-              </VStack>
-            </VStack>
-            <VStack spacing={{ base: '4', md: '12' }}>
-              <Heading variant="shift">Matutino</Heading>
-
-              <VStack spacing={{ base: '4', md: '6' }}>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    07h00 às 07h50
-                  </Text>
-                </HStack>
-              </VStack>
-            </VStack>
+            ))}
           </Stack>
 
           <Bubble
