@@ -92,7 +92,7 @@ const Home: NextPage = () => {
               <StackDivider
                 borderColor="gray.100"
                 borderStyle="dashed"
-                height={{ md: '21rem' }}
+                height={{ md: university === 'ifrn' ? '13.5rem' : '21rem' }}
                 width={{ base: '100%', md: 'unset' }}
                 alignSelf="flex-end"
               />
