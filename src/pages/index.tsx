@@ -41,7 +41,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Horários Universitários</title>
+        <title>
+          Horários Universitários
+          {typeof window !== 'undefined' && ` - ${university.toUpperCase()}`}
+        </title>
       </Head>
 
       <Container maxW="container.xl" mt="10" mb="8">
