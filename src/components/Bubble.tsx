@@ -12,5 +12,13 @@ const gradientByVariant = {
 };
 
 export function Bubble({ variant = 'blue', ...rest }: BubbleProps) {
-  return <Box bgGradient={gradientByVariant[variant]} {...rest} />;
+  return (
+    <Box
+      bgGradient={gradientByVariant[variant]}
+      borderRadius="full"
+      pos="absolute"
+      zIndex={-1}
+      {...rest}
+    />
+  );
 }

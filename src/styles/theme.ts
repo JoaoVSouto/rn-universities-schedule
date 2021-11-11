@@ -53,6 +53,7 @@ export const theme = extendTheme({
         bg: 'black',
         color: 'white',
         overflowX: 'hidden',
+        display: 'flow-root',
       },
     },
   },
