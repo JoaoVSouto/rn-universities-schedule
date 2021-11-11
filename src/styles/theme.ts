@@ -55,6 +55,13 @@ export const theme = extendTheme({
         overflowX: 'hidden',
         display: 'flow-root',
       },
+      '#__next': {
+        display: 'grid',
+        placeItems: 'center',
+      },
+      'body, #__next': {
+        minHeight: '100vh',
+      },
     },
   },
 });

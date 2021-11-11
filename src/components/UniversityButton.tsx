@@ -58,7 +58,7 @@ export function UniversityButton({
       fontSize="inherit"
       height="inherit"
       fontWeight="inherit"
-      width="56"
+      width={{ base: '36', lg: '44' }}
       sx={{
         '&:hover': {
           color: 'white',

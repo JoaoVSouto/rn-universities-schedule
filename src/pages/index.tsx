@@ -35,22 +35,22 @@ const Home: NextPage = () => {
         <title>Horários Universitários</title>
       </Head>
 
-      <Container maxW="container.xl" mt="24" mb="8">
+      <Container maxW="container.xl" mt="10" mb="8">
         <Heading
           as="h1"
-          size="4xl"
+          fontSize={['4xl', '5xl', '6xl', '7xl']}
           textAlign="center"
           bgGradient="linear(114.85deg, blue.500 -16.23%, green.200 102.97%)"
           bgClip="text"
         >
           Horários Universitários
         </Heading>
-        <Flex justify="center" mt="12">
+        <Flex justify="center" mt="8">
           <ButtonGroup
             isAttached
             color="gray.500"
-            fontSize="3xl"
-            height="20"
+            fontSize={{ base: 'xl', lg: '2xl' }}
+            height={{ base: '12', lg: '16' }}
             fontWeight="bold"
           >
             <UniversityButton
@@ -66,106 +66,152 @@ const Home: NextPage = () => {
           </ButtonGroup>
         </Flex>
 
-        <Box pos="relative" maxW="985" mx="auto">
+        <Box pos="relative" maxW="985" mx="auto" mt="10">
           <Stack
-            direction="row"
+            direction={{ base: 'column', md: 'row' }}
             justify="space-between"
-            spacing={0}
+            spacing={{ base: '6', md: '4' }}
             bgGradient="linear(to-b, cyan.10 0%, green.10 100%)"
             backdropFilter="blur(20px)"
             borderRadius="40"
-            mt="14"
-            pt="10"
-            px="14"
-            pb="14"
+            pt={{ base: '6', md: '8', lg: '10' }}
+            px={{ base: '10', md: '12', lg: '14' }}
+            pb={{ base: '10', md: '12', lg: '14' }}
+            w={{ base: 'max-content', md: 'unset' }}
+            mx="auto"
             divider={
               <StackDivider
                 borderColor="gray.100"
                 borderStyle="dashed"
-                height="21rem"
+                height={{ md: '21rem' }}
+                width={{ base: '100%', md: 'unset' }}
                 alignSelf="flex-end"
               />
             }
           >
-            <VStack spacing="12">
+            <VStack spacing={{ base: '4', md: '12' }}>
               <Heading variant="shift">Matutino</Heading>
 
-              <VStack spacing="6">
+              <VStack spacing={{ base: '4', md: '6' }}>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-              </VStack>
-            </VStack>
-            <VStack spacing="12">
-              <Heading variant="shift">Vespertino</Heading>
-
-              <VStack spacing="6">
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
-                </HStack>
-                <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
               </VStack>
             </VStack>
-            <VStack spacing="12">
-              <Heading variant="shift">Noturno</Heading>
+            <VStack spacing={{ base: '4', md: '12' }}>
+              <Heading variant="shift">Matutino</Heading>
 
-              <VStack spacing="6">
+              <VStack spacing={{ base: '4', md: '6' }}>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
                 <HStack spacing="4">
-                  <Text fontSize="2xl">M1</Text>
-                  <Text fontSize="2xl">07h00 às 07h50</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+              </VStack>
+            </VStack>
+            <VStack spacing={{ base: '4', md: '12' }}>
+              <Heading variant="shift">Matutino</Heading>
+
+              <VStack spacing={{ base: '4', md: '6' }}>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
+                </HStack>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>M1</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    07h00 às 07h50
+                  </Text>
                 </HStack>
               </VStack>
             </VStack>
@@ -209,7 +255,13 @@ const Home: NextPage = () => {
             left="0.125rem"
           />
         </Box>
-        <Text align="center" mt="10" color="gray.700" fontWeight="semibold">
+        <Text
+          align="center"
+          mt="10"
+          color="gray.700"
+          fontWeight="semibold"
+          fontSize={{ base: 'sm', lg: 'md' }}
+        >
           designed by{' '}
           <Link
             href="https://www.linkedin.com/in/mayra-perpetua/"
@@ -238,6 +290,7 @@ const Home: NextPage = () => {
         transform="rotate(55deg)"
         top="-8.8125rem"
         right="-12.8125rem"
+        display={{ base: 'none', md: 'block' }}
       />
 
       <Bubble
@@ -248,6 +301,7 @@ const Home: NextPage = () => {
         pos="fixed"
         bottom="-9.75rem"
         left="-15.1875rem"
+        display={{ base: 'none', md: 'block' }}
       />
     </>
   );
