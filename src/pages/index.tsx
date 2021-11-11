@@ -15,6 +15,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
+import { usePersistedState } from 'hooks/usePersistedState';
+
 import type { Universities } from 'types/Universities';
 
 import { schedules } from 'data/schedules';
@@ -23,7 +25,10 @@ import { Bubble } from 'components/Bubble';
 import { UniversityButton } from 'components/UniversityButton';
 
 const Home: NextPage = () => {
-  const [university, setUniversity] = React.useState<Universities>('ifrn');
+  const [university, setUniversity] = usePersistedState<Universities>(
+    '@university-schedule',
+    'ifrn'
+  );
 
   const chosenSchedule = schedules[university];
 
