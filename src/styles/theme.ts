@@ -52,12 +52,12 @@ export const theme = extendTheme({
       body: {
         bg: 'black',
         color: 'white',
-        overflowX: 'hidden',
         display: 'flow-root',
       },
       '#__next': {
         display: 'grid',
         placeItems: 'center',
+        overflowX: 'hidden',
       },
       'body, #__next': {
         minHeight: '100vh',
