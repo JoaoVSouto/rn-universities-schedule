@@ -1,4 +1,3 @@
-import * as React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import {
@@ -95,9 +94,9 @@ const Home: NextPage = () => {
               <StackDivider
                 borderColor="gray.100"
                 borderStyle="dashed"
-                height={{ md: university === 'ifrn' ? '13.5rem' : '21rem' }}
                 width={{ base: '100%', md: 'unset' }}
-                alignSelf="flex-end"
+                // not proud of that 😎
+                mt={{ md: '5.25rem !important' }}
               />
             }
           >
