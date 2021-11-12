@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '@chakra-ui/react';
+import { Button, ButtonProps, Skeleton } from '@chakra-ui/react';
 
 import type { Universities } from 'types/Universities';
 
@@ -45,6 +45,22 @@ export function UniversityButton({
   ...rest
 }: UniversityButtonProps) {
   const chosenUniversity = universities[university];
+
+  if (!process.browser) {
+    return (
+      <Skeleton
+        startColor="gray.700"
+        endColor="gray.900"
+        width={{ base: '36', lg: '44' }}
+        borderTopLeftRadius={chosenUniversity.borderTopLeftRadius}
+        borderBottomLeftRadius={chosenUniversity.borderBottomLeftRadius}
+        borderTopRightRadius={chosenUniversity.borderTopRightRadius}
+        borderBottomRightRadius={chosenUniversity.borderBottomRightRadius}
+      >
+        {chosenUniversity.label}
+      </Skeleton>
+    );
+  }
 
   return (
     <Button
