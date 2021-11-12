@@ -1,9 +1,16 @@
 import { Box, BoxProps } from '@chakra-ui/react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
 type Variants = 'blue' | 'green';
 
 type BubbleProps = {
   variant?: Variants;
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
+  position?: 'absolute' | 'fixed';
+  motionProps?: HTMLMotionProps<'div'>;
 } & BoxProps;
 
 const gradientByVariant = {
@@ -11,14 +18,27 @@ const gradientByVariant = {
   blue: 'linear(to-b, cyan.400 0%, cyan.800 100%)',
 };
 
-export function Bubble({ variant = 'blue', ...rest }: BubbleProps) {
+export function Bubble({
+  variant = 'blue',
+  top,
+  left,
+  right,
+  bottom,
+  position = 'absolute',
+  motionProps,
+  ...rest
+}: BubbleProps) {
   return (
-    <Box
-      bgGradient={gradientByVariant[variant]}
-      borderRadius="full"
-      pos="absolute"
-      zIndex={-1}
-      {...rest}
-    />
+    <motion.div
+      layout
+      style={{ position, top, left, right, bottom, zIndex: -1 }}
+      {...motionProps}
+    >
+      <Box
+        bgGradient={gradientByVariant[variant]}
+        borderRadius="full"
+        {...rest}
+      />
+    </motion.div>
   );
 }

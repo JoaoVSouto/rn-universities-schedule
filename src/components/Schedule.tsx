@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 type Schedule = {
   stamp: string;
@@ -37,6 +38,8 @@ export function Schedule({ data }: ScheduleProps) {
       mx="auto"
       divider={
         <StackDivider
+          as={motion.div}
+          layout
           borderColor="gray.100"
           borderStyle="dashed"
           width={{ base: '100%', md: 'unset' }}
@@ -47,14 +50,20 @@ export function Schedule({ data }: ScheduleProps) {
     >
       {data.map(schedule => (
         <VStack key={schedule.shift} spacing={{ base: '4', md: '12' }}>
-          <Heading variant="shift">{schedule.shift}</Heading>
+          <motion.div layout>
+            <Heading variant="shift">{schedule.shift}</Heading>
+          </motion.div>
 
           <VStack spacing={{ base: '4', md: '6' }} align="start">
             {schedule.schedules.map(({ description, stamp }) => (
-              <HStack key={stamp} spacing="4">
-                <Text fontSize={{ base: 'lg', lg: '2xl' }}>{stamp}</Text>
-                <Text fontSize={{ base: 'lg', lg: '2xl' }}>{description}</Text>
-              </HStack>
+              <motion.div key={stamp} layout>
+                <HStack spacing="4">
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>{stamp}</Text>
+                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                    {description}
+                  </Text>
+                </HStack>
+              </motion.div>
             ))}
           </VStack>
         </VStack>

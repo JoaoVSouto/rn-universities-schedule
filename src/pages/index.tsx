@@ -1,6 +1,14 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Box, ButtonGroup, Container, Flex, Heading } from '@chakra-ui/react';
+import {
+  ButtonGroup,
+  chakra,
+  Container,
+  Flex,
+  Heading,
+  shouldForwardProp,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import { usePersistedState } from 'hooks/usePersistedState';
 
@@ -12,6 +20,10 @@ import { Bubble } from 'components/Bubble';
 import { UniversityButton } from 'components/UniversityButton';
 import { Schedule } from 'components/Schedule';
 import { Signature } from 'components/Signature';
+
+const StyledDiv = chakra(motion.div, {
+  shouldForwardProp: prop => shouldForwardProp(prop) || prop === 'transition',
+});
 
 const Home: NextPage = () => {
   const [university, setUniversity] = usePersistedState<Universities>(
@@ -37,38 +49,42 @@ const Home: NextPage = () => {
       </Head>
 
       <Container maxW="container.xl" mt="10" mb="8">
-        <Heading
-          as="h1"
-          fontSize={['4xl', '5xl', '6xl', '7xl']}
-          textAlign="center"
-          bgGradient="linear(114.85deg, blue.500 -16.23%, green.200 102.97%)"
-          bgClip="text"
-          userSelect="none"
-        >
-          Horários Universitários
-        </Heading>
-        <Flex justify="center" mt="8">
-          <ButtonGroup
-            isAttached
-            color="gray.200"
-            fontSize={{ base: 'xl', lg: '2xl' }}
-            height={{ base: '12', lg: '16' }}
-            fontWeight="bold"
+        <motion.div layout>
+          <Heading
+            as="h1"
+            fontSize={['4xl', '5xl', '6xl', '7xl']}
+            textAlign="center"
+            bgGradient="linear(114.85deg, blue.500 -16.23%, green.200 102.97%)"
+            bgClip="text"
+            userSelect="none"
           >
-            <UniversityButton
-              university="ifrn"
-              isActive={university === 'ifrn'}
-              onClick={handleChangeUniversity('ifrn')}
-            />
-            <UniversityButton
-              university="ufrn"
-              isActive={university === 'ufrn'}
-              onClick={handleChangeUniversity('ufrn')}
-            />
-          </ButtonGroup>
-        </Flex>
+            Horários Universitários
+          </Heading>
+        </motion.div>
+        <motion.div layout>
+          <Flex justify="center" mt="8">
+            <ButtonGroup
+              isAttached
+              color="gray.200"
+              fontSize={{ base: 'xl', lg: '2xl' }}
+              height={{ base: '12', lg: '16' }}
+              fontWeight="bold"
+            >
+              <UniversityButton
+                university="ifrn"
+                isActive={university === 'ifrn'}
+                onClick={handleChangeUniversity('ifrn')}
+              />
+              <UniversityButton
+                university="ufrn"
+                isActive={university === 'ufrn'}
+                onClick={handleChangeUniversity('ufrn')}
+              />
+            </ButtonGroup>
+          </Flex>
+        </motion.div>
 
-        <Box pos="relative" maxW="985" mx="auto" mt="10">
+        <StyledDiv layout pos="relative" maxW="985" mx="auto" mt="10">
           <Schedule data={chosenSchedule} />
 
           <Bubble
@@ -108,15 +124,17 @@ const Home: NextPage = () => {
             bottom="0.5625rem"
             left="0.125rem"
           />
-        </Box>
+        </StyledDiv>
 
-        <Signature />
+        <motion.div layout>
+          <Signature />
+        </motion.div>
       </Container>
 
       <Bubble
         w="80"
         h="80"
-        pos="fixed"
+        position="fixed"
         transform="rotate(55deg)"
         top="-8.8125rem"
         right="-12.8125rem"
@@ -128,7 +146,7 @@ const Home: NextPage = () => {
         w="80"
         h="80"
         transform="rotate(-63deg)"
-        pos="fixed"
+        position="fixed"
         bottom="-9.75rem"
         left="-15.1875rem"
         display={{ base: 'none', md: 'block' }}
