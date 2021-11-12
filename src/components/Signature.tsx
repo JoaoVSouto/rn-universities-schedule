@@ -5,7 +5,7 @@ export function Signature() {
     <Text
       align="center"
       mt="10"
-      color="gray.700"
+      color="gray.250"
       fontWeight="semibold"
       fontSize={{ base: 'sm', lg: 'md' }}
     >
