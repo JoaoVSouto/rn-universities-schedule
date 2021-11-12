@@ -11,6 +11,7 @@ type BubbleProps = {
   bottom?: string;
   position?: 'absolute' | 'fixed';
   motionProps?: HTMLMotionProps<'div'>;
+  delay?: number;
 } & BoxProps;
 
 const gradientByVariant = {
@@ -26,19 +27,24 @@ export function Bubble({
   bottom,
   position = 'absolute',
   motionProps,
+  delay = 0,
   ...rest
 }: BubbleProps) {
   return (
     <motion.div
-      layout
       style={{ position, top, left, right, bottom, zIndex: -1 }}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5, delay }}
       {...motionProps}
     >
-      <Box
-        bgGradient={gradientByVariant[variant]}
-        borderRadius="full"
-        {...rest}
-      />
+      <motion.div layout>
+        <Box
+          bgGradient={gradientByVariant[variant]}
+          borderRadius="full"
+          {...rest}
+        />
+      </motion.div>
     </motion.div>
   );
 }

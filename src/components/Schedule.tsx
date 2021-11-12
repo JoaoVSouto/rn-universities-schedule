@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   Heading,
   HStack,
@@ -6,7 +7,9 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+
+import { FadeInUp } from 'components/FadeInUp';
 
 type Schedule = {
   stamp: string;
@@ -23,6 +26,19 @@ type ScheduleProps = {
 };
 
 export function Schedule({ data }: ScheduleProps) {
+  const staggerControls = useAnimation();
+  const isUpdate = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!isUpdate.current) {
+      isUpdate.current = true;
+      staggerControls.start('show');
+      return;
+    }
+
+    staggerControls.start('show', { duration: 0 });
+  }, [data, staggerControls]);
+
   return (
     <Stack
       direction={{ base: 'column', md: 'row' }}
@@ -55,14 +71,16 @@ export function Schedule({ data }: ScheduleProps) {
           </motion.div>
 
           <VStack spacing={{ base: '4', md: '6' }} align="start">
-            {schedule.schedules.map(({ description, stamp }) => (
-              <motion.div key={stamp} layout>
-                <HStack spacing="4">
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>{stamp}</Text>
-                  <Text fontSize={{ base: 'lg', lg: '2xl' }}>
-                    {description}
-                  </Text>
-                </HStack>
+            {schedule.schedules.map(({ description, stamp }, index) => (
+              <motion.div layout key={stamp}>
+                <FadeInUp delay={0.1 * index + 0.6} animate={staggerControls}>
+                  <HStack spacing="4">
+                    <Text fontSize={{ base: 'lg', lg: '2xl' }}>{stamp}</Text>
+                    <Text fontSize={{ base: 'lg', lg: '2xl' }}>
+                      {description}
+                    </Text>
+                  </HStack>
+                </FadeInUp>
               </motion.div>
             ))}
           </VStack>
