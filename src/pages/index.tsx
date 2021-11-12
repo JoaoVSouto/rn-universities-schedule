@@ -33,8 +33,10 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>
-          Horários Universitários
-          {typeof window !== 'undefined' && ` - ${university.toUpperCase()}`}
+          Horários Universitários -
+          {typeof window !== 'undefined'
+            ? ` ${university.toUpperCase()}`
+            : ' UFRN & IFRN'}
         </title>
       </Head>
 
