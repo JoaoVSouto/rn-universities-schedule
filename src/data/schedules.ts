@@ -5,18 +5,26 @@ export const schedules = {
       schedules: [
         {
           stamp: 'M1',
-          description: '08h30 às 09h15',
+          description: '07h00 às 07h45',
         },
         {
           stamp: 'M2',
-          description: '09h15 às 10h00',
+          description: '07h45 às 08h30',
         },
         {
           stamp: 'M3',
-          description: '10h30 às 11h15',
+          description: '08h50 às 09h35',
         },
         {
           stamp: 'M4',
+          description: '09h35 às 10h20',
+        },
+        {
+          stamp: 'M5',
+          description: '10h30 às 11h15',
+        },
+        {
+          stamp: 'M6',
           description: '11h15 às 12h00',
         },
       ],
@@ -26,19 +34,27 @@ export const schedules = {
       schedules: [
         {
           stamp: 'T1',
-          description: '14h00 às 14h45',
+          description: '13h00 às 13h45',
         },
         {
           stamp: 'T2',
-          description: '14h45 às 15h30',
+          description: '13h45 às 14h30',
         },
         {
           stamp: 'T3',
-          description: '16h00 às 16h45',
+          description: '14h50 às 15h35',
         },
         {
           stamp: 'T4',
-          description: '16h45 às 17h30',
+          description: '15h35 às 16h20',
+        },
+        {
+          stamp: 'T5',
+          description: '16h30 às 17h15',
+        },
+        {
+          stamp: 'T6',
+          description: '17h15 às 18h00',
         },
       ],
     },
