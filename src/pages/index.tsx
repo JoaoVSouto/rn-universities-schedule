@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>
-          Horários Universitários -
+          Horários de Aula -
           {typeof window !== 'undefined'
             ? ` ${university.toUpperCase()}`
             : ' UFRN & IFRN'}
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
               bgClip="text"
               userSelect="none"
             >
-              Horários Universitários
+              Horários de Aula
             </Heading>
           </motion.div>
         </FadeInUp>
