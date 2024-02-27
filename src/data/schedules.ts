@@ -94,19 +94,19 @@ export const schedules = {
         },
         {
           stamp: 'M3',
-          description: '08h55 às 09h45',
+          description: '08h50 às 09h40',
         },
         {
           stamp: 'M4',
-          description: '09h45 às 10h35',
+          description: '09h40 às 10h30',
         },
         {
           stamp: 'M5',
-          description: '10h50 às 11h40',
+          description: '10h40 às 11h30',
         },
         {
           stamp: 'M6',
-          description: '11h40 às 12h30',
+          description: '11h30 às 12h20',
         },
       ],
     },
@@ -123,19 +123,19 @@ export const schedules = {
         },
         {
           stamp: 'T3',
-          description: '14h55 às 15h45',
+          description: '14h50 às 15h40',
         },
         {
           stamp: 'T4',
-          description: '15h45 às 16h35',
+          description: '15h40 às 16h30',
         },
         {
           stamp: 'T5',
-          description: '16h50 às 17h40',
+          description: '16h40 às 17h30',
         },
         {
           stamp: 'T6',
-          description: '17h40 às 18h30',
+          description: '17h30 às 18h20',
         },
       ],
     },
@@ -144,19 +144,19 @@ export const schedules = {
       schedules: [
         {
           stamp: 'N1',
-          description: '18h45 às 19h35',
+          description: '18h40 às 19h30',
         },
         {
           stamp: 'N2',
-          description: '19h35 às 20h25',
+          description: '19h30 às 20h20',
         },
         {
           stamp: 'N3',
-          description: '20h35 às 21h25',
+          description: '20h30 às 21h20',
         },
         {
           stamp: 'N4',
-          description: '21h25 às 22h15',
+          description: '21h20 às 22h10',
         },
       ],
     },
