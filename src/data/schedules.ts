@@ -106,7 +106,7 @@ export const schedules = {
         },
         {
           stamp: 'M6',
-          description: '11h30 às 12h30',
+          description: '11h30 às 12h20',
         },
       ],
     },
