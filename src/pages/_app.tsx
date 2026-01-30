@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/next';
 import { ChakraProvider } from '@chakra-ui/react';
 
 import { theme } from 'styles/theme';
@@ -17,6 +18,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
+
+      <Analytics />
     </>
   );
 }
